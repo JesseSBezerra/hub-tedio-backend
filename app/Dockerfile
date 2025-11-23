@@ -14,12 +14,18 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # Stage 2: Runtime
-FROM eclipse-temurin:17-jre-alpine
+FROM eclipse-temurin:17-jre-jammy
 
 WORKDIR /app
 
+# Instala curl para health check
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends curl && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
 # Cria usuário não-root para segurança
-RUN addgroup -S spring && adduser -S spring -G spring
+RUN groupadd -r spring && useradd -r -g spring spring
 USER spring:spring
 
 # Copia o JAR da stage de build
@@ -39,7 +45,7 @@ ENV JWT_SECRET_KEY=changeme
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=3s --start-period=60s --retries=3 \
-  CMD wget --no-verbose --tries=1 --spider http://localhost:8101/actuator/health || exit 1
+  CMD curl -f http://localhost:8101/actuator/health || exit 1
 
 # Comando de inicialização
 ENTRYPOINT ["java", \
