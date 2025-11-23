@@ -1,0 +1,160 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2024-11-20T16:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "wrk_api_auth",
+      "parentId": null,
+      "name": "TedioApp - API Authentications",
+      "description": "Gerenciamento de autenticações de APIs externas",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_api_auth",
+      "parentId": "wrk_api_auth",
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:8101",
+        "jwt_token": ""
+      },
+      "dataPropertyOrder": {
+        "&": ["base_url", "jwt_token"]
+      },
+      "_type": "environment"
+    },
+    {
+      "_id": "req_create_api_auth_oauth2",
+      "parentId": "wrk_api_auth",
+      "url": "{{ _.base_url }}/api/register/authentication",
+      "name": "Create API Auth - OAuth2",
+      "description": "Exemplo de autenticação OAuth2",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"OAuth2 Google API\",\n  \"descricao\": \"Autenticação OAuth2 para Google APIs\",\n  \"ownerId\": 1,\n  \"url\": \"https://oauth2.googleapis.com/token\",\n  \"authenticationType\": \"OAUTH2\",\n  \"contentType\": \"APPLICATION_FORM_URLENCODED\",\n  \"requestBody\": {\n    \"grant_type\": \"client_credentials\",\n    \"client_id\": \"seu_client_id\",\n    \"client_secret\": \"seu_client_secret\",\n    \"scope\": \"https://www.googleapis.com/auth/drive\"\n  },\n  \"headers\": {\n    \"Accept\": \"application/json\"\n  }\n}"
+      },
+      "headers": [
+        {"name": "Content-Type", "value": "application/json"},
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_api_auth_basic",
+      "parentId": "wrk_api_auth",
+      "url": "{{ _.base_url }}/api/register/authentication",
+      "name": "Create API Auth - Basic",
+      "description": "Exemplo de autenticação Basic",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Basic Auth API\",\n  \"descricao\": \"Autenticação básica com username e password\",\n  \"ownerId\": 1,\n  \"url\": \"https://api.exemplo.com/login\",\n  \"authenticationType\": \"BASIC\",\n  \"contentType\": \"APPLICATION_JSON\",\n  \"requestBody\": {\n    \"username\": \"admin\",\n    \"password\": \"senha123\"\n  },\n  \"headers\": {\n    \"Authorization\": \"Basic YWRtaW46c2VuaGExMjM=\"\n  }\n}"
+      },
+      "headers": [
+        {"name": "Content-Type", "value": "application/json"},
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_api_auth_apikey",
+      "parentId": "wrk_api_auth",
+      "url": "{{ _.base_url }}/api/register/authentication",
+      "name": "Create API Auth - API Key",
+      "description": "Exemplo de autenticação com API Key",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"API Key Auth\",\n  \"descricao\": \"Autenticação via API Key nos headers\",\n  \"ownerId\": 1,\n  \"url\": \"https://api.exemplo.com/data\",\n  \"authenticationType\": \"API_KEY\",\n  \"contentType\": \"APPLICATION_JSON\",\n  \"requestBody\": {},\n  \"headers\": {\n    \"X-API-Key\": \"sua_api_key_aqui\",\n    \"X-API-Secret\": \"seu_secret_aqui\"\n  }\n}"
+      },
+      "headers": [
+        {"name": "Content-Type", "value": "application/json"},
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_all_api_auth",
+      "parentId": "wrk_api_auth",
+      "url": "{{ _.base_url }}/api/register/authentication",
+      "name": "Get All API Authentications",
+      "description": "Lista todas as autenticações cadastradas",
+      "method": "GET",
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_api_auth_by_owner",
+      "parentId": "wrk_api_auth",
+      "url": "{{ _.base_url }}/api/register/authentication?ownerId=1",
+      "name": "Get API Auths By Owner",
+      "description": "Lista autenticações de um owner específico",
+      "method": "GET",
+      "parameters": [
+        {"name": "ownerId", "value": "1"}
+      ],
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_api_auth_by_id",
+      "parentId": "wrk_api_auth",
+      "url": "{{ _.base_url }}/api/register/authentication/1",
+      "name": "Get API Auth By ID",
+      "description": "Busca autenticação por ID",
+      "method": "GET",
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_update_api_auth",
+      "parentId": "wrk_api_auth",
+      "url": "{{ _.base_url }}/api/register/authentication/1",
+      "name": "Update API Authentication",
+      "description": "Atualiza configuração de autenticação",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"OAuth2 Google API Updated\",\n  \"descricao\": \"Descrição atualizada\",\n  \"ownerId\": 1,\n  \"url\": \"https://oauth2.googleapis.com/token\",\n  \"authenticationType\": \"OAUTH2\",\n  \"contentType\": \"APPLICATION_JSON\",\n  \"requestBody\": {\n    \"grant_type\": \"refresh_token\",\n    \"refresh_token\": \"novo_refresh_token\"\n  },\n  \"headers\": {\n    \"Authorization\": \"Bearer novo_token\"\n  }\n}"
+      },
+      "headers": [
+        {"name": "Content-Type", "value": "application/json"},
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_delete_api_auth",
+      "parentId": "wrk_api_auth",
+      "url": "{{ _.base_url }}/api/register/authentication/1",
+      "name": "Delete API Authentication",
+      "description": "Remove autenticação do sistema",
+      "method": "DELETE",
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_test_api_auth",
+      "parentId": "wrk_api_auth",
+      "url": "{{ _.base_url }}/api/register/authentication/test/OAuth2%20Google%20API",
+      "name": "Test API Authentication",
+      "description": "Testa a autenticação configurada (faz requisição real)",
+      "method": "POST",
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    }
+  ]
+}

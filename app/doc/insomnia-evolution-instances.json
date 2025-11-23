@@ -1,0 +1,416 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2024-11-21T20:47:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "req_evolution_instance_create",
+      "parentId": "fld_evolution_instance",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution-instance",
+      "name": "Create Evolution Instance",
+      "description": "Cria uma nova instância Evolution (integra com API Evolution)",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"instanceName\": \"empresa-fracisco-sa\",\n  \"qrcode\": true,\n  \"evolutionId\": 1,\n  \"integration\": \"WHATSAPP-BAILEYS\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596800000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_evolution_instance_get_all",
+      "parentId": "fld_evolution_instance",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution-instance",
+      "name": "Get All Evolution Instances",
+      "description": "Lista todas as instâncias Evolution",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596700000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_evolution_instance_get_by_evolution",
+      "parentId": "fld_evolution_instance",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution-instance",
+      "name": "Get Instances By Evolution",
+      "description": "Lista instâncias filtradas por Evolution",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "evolutionId",
+          "value": "1"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596650000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_evolution_instance_get_by_user",
+      "parentId": "fld_evolution_instance",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution-instance",
+      "name": "Get Instances By User",
+      "description": "Lista instâncias filtradas por usuário",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "userId",
+          "value": "1"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596640000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_evolution_instance_get_by_status",
+      "parentId": "fld_evolution_instance",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution-instance",
+      "name": "Get Instances By Status",
+      "description": "Lista instâncias filtradas por status",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "status",
+          "value": "open"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596630000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_evolution_instance_get_by_id",
+      "parentId": "fld_evolution_instance",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution-instance/1",
+      "name": "Get Evolution Instance By ID",
+      "description": "Busca instância por ID",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596600000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_evolution_instance_get_by_name",
+      "parentId": "fld_evolution_instance",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution-instance/name/empresa-fracisco-sa",
+      "name": "Get Evolution Instance By Name",
+      "description": "Busca instância por nome",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596550000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_evolution_instance_connect",
+      "parentId": "fld_evolution_instance",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution-instance/1/connect",
+      "name": "Connect Instance (Get QR Code)",
+      "description": "Conecta instância e retorna QR Code para autenticação",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596500000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_evolution_instance_connection_state",
+      "parentId": "fld_evolution_instance",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution-instance/1/connection-state",
+      "name": "Get Connection State",
+      "description": "Verifica o estado da conexão da instância",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596450000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_evolution_instance_set_webhook",
+      "parentId": "fld_evolution_instance",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution-instance/1/webhook",
+      "name": "Set Webhook",
+      "description": "Configura webhook para receber eventos do WhatsApp",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"webhookUrl\": \"https://98dbda3efcd0.ngrok-free.app/api/webhook\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596437500,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_evolution_instance_logout",
+      "parentId": "fld_evolution_instance",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution-instance/1/logout",
+      "name": "Logout Instance",
+      "description": "Desconecta a instância do WhatsApp (não deleta do banco)",
+      "method": "POST",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596425000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_evolution_instance_delete",
+      "parentId": "fld_evolution_instance",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution-instance/1",
+      "name": "Delete Evolution Instance",
+      "description": "Deleta instância da API Evolution e do banco de dados",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596400000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_evolution_instance",
+      "parentId": "wrk_tedioapp",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "name": "Evolution Instance",
+      "description": "Gerenciamento de instâncias Evolution (integração com API)",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1700596800000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_tedioapp",
+      "parentId": null,
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "name": "TedioApp - Evolution Instance",
+      "description": "Collection para gerenciamento de Evolution Instances",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_tedioapp_evolution_instance",
+      "parentId": "wrk_tedioapp",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:8101",
+        "jwt_token": ""
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "base_url",
+          "jwt_token"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1700596800000,
+      "_type": "environment"
+    }
+  ]
+}

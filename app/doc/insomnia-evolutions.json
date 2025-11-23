@@ -1,0 +1,266 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2024-11-21T19:24:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "req_evolution_create",
+      "parentId": "fld_evolution",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution",
+      "name": "Create Evolution",
+      "description": "Cria uma nova instância Evolution",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Evolution Produção\",\n  \"descricao\": \"Instância principal de produção\",\n  \"url\": \"https://api.evolution.com.br\",\n  \"apiKey\": \"sua-api-key-aqui\",\n  \"ownerId\": 1\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596800000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_evolution_get_all",
+      "parentId": "fld_evolution",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution",
+      "name": "Get All Evolutions",
+      "description": "Lista todas as instâncias Evolution",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596700000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_evolution_get_by_owner",
+      "parentId": "fld_evolution",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution",
+      "name": "Get Evolutions By Owner",
+      "description": "Lista evolutions filtradas por owner",
+      "method": "GET",
+      "body": {},
+      "parameters": [
+        {
+          "name": "ownerId",
+          "value": "1"
+        }
+      ],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596650000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_evolution_get_by_id",
+      "parentId": "fld_evolution",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution/1",
+      "name": "Get Evolution By ID",
+      "description": "Busca evolution por ID",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596600000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_evolution_get_by_nome",
+      "parentId": "fld_evolution",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution/nome/Evolution Produção",
+      "name": "Get Evolution By Nome",
+      "description": "Busca evolution por nome",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596550000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_evolution_update",
+      "parentId": "fld_evolution",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution/1",
+      "name": "Update Evolution",
+      "description": "Atualiza uma evolution existente",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Evolution Produção V2\",\n  \"descricao\": \"Instância atualizada\",\n  \"url\": \"https://api-v2.evolution.com.br\",\n  \"apiKey\": \"nova-api-key\",\n  \"ownerId\": 1\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596500000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_evolution_delete",
+      "parentId": "fld_evolution",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution/1",
+      "name": "Delete Evolution",
+      "description": "Deleta uma evolution",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596400000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_evolution",
+      "parentId": "wrk_tedioapp",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "name": "Evolution",
+      "description": "Gerenciamento de instâncias Evolution API",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1700596800000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_tedioapp",
+      "parentId": null,
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "name": "TedioApp - Evolution",
+      "description": "Collection para gerenciamento de Evolution API",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_tedioapp_evolution",
+      "parentId": "wrk_tedioapp",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:8101",
+        "jwt_token": ""
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "base_url",
+          "jwt_token"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1700596800000,
+      "_type": "environment"
+    }
+  ]
+}

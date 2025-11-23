@@ -1,0 +1,132 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2024-11-20T16:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "wrk_users",
+      "parentId": null,
+      "name": "TedioApp - Users",
+      "description": "Gerenciamento de usuários APPLICATION e INTEGRATION",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_users",
+      "parentId": "wrk_users",
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:8101",
+        "jwt_token": ""
+      },
+      "dataPropertyOrder": {
+        "&": ["base_url", "jwt_token"]
+      },
+      "_type": "environment"
+    },
+    {
+      "_id": "req_create_app_user",
+      "parentId": "wrk_users",
+      "url": "{{ _.base_url }}/api/user",
+      "name": "Create Application User",
+      "description": "Cria usuário tipo APPLICATION (público)",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"João Silva\",\n  \"email\": \"joao@example.com\",\n  \"password\": \"senha123\"\n}"
+      },
+      "headers": [
+        {"name": "Content-Type", "value": "application/json"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_int_user",
+      "parentId": "wrk_users",
+      "url": "{{ _.base_url }}/api/user/integration",
+      "name": "Create Integration User",
+      "description": "Cria usuário tipo INTEGRATION (público)",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Sistema Integração\",\n  \"email\": \"integration@example.com\",\n  \"password\": \"senha123\",\n  \"clientId\": \"client-123\",\n  \"clientSecret\": \"secret-456\"\n}"
+      },
+      "headers": [
+        {"name": "Content-Type", "value": "application/json"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_all_users",
+      "parentId": "wrk_users",
+      "url": "{{ _.base_url }}/api/user",
+      "name": "Get All Users",
+      "description": "Lista todos os usuários",
+      "method": "GET",
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_user_by_id",
+      "parentId": "wrk_users",
+      "url": "{{ _.base_url }}/api/user?id=1",
+      "name": "Get User By ID",
+      "description": "Busca usuário por ID",
+      "method": "GET",
+      "parameters": [
+        {"name": "id", "value": "1"}
+      ],
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_user_by_email",
+      "parentId": "wrk_users",
+      "url": "{{ _.base_url }}/api/user?email=joao@example.com",
+      "name": "Get User By Email",
+      "description": "Busca usuário por email",
+      "method": "GET",
+      "parameters": [
+        {"name": "email", "value": "joao@example.com"}
+      ],
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_update_user",
+      "parentId": "wrk_users",
+      "url": "{{ _.base_url }}/api/user/1",
+      "name": "Update User",
+      "description": "Atualiza dados do usuário",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"João Silva Atualizado\",\n  \"email\": \"joao.novo@example.com\",\n  \"password\": \"novaSenha123\"\n}"
+      },
+      "headers": [
+        {"name": "Content-Type", "value": "application/json"},
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_delete_user",
+      "parentId": "wrk_users",
+      "url": "{{ _.base_url }}/api/user/1",
+      "name": "Delete User",
+      "description": "Remove usuário do sistema",
+      "method": "DELETE",
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    }
+  ]
+}

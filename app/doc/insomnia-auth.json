@@ -1,0 +1,45 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2024-11-20T16:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "wrk_auth",
+      "parentId": null,
+      "name": "TedioApp - Authentication",
+      "description": "Autenticação JWT - Comum a todos os serviços",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_auth",
+      "parentId": "wrk_auth",
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:8101",
+        "jwt_token": ""
+      },
+      "dataPropertyOrder": {
+        "&": ["base_url", "jwt_token"]
+      },
+      "_type": "environment"
+    },
+    {
+      "_id": "req_login",
+      "parentId": "wrk_auth",
+      "url": "{{ _.base_url }}/api/auth/login",
+      "name": "Login",
+      "description": "Autentica usuário e retorna JWT token",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"email\": \"user@example.com\",\n  \"password\": \"senha123\"\n}"
+      },
+      "headers": [
+        {"name": "Content-Type", "value": "application/json"}
+      ],
+      "_type": "request"
+    }
+  ]
+}

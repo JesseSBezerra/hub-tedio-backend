@@ -1,0 +1,99 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2024-11-20T16:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "wrk_owners",
+      "parentId": null,
+      "name": "TedioApp - Owners",
+      "description": "Gerenciamento de proprietários de APIs",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_owners",
+      "parentId": "wrk_owners",
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:8101",
+        "jwt_token": ""
+      },
+      "dataPropertyOrder": {
+        "&": ["base_url", "jwt_token"]
+      },
+      "_type": "environment"
+    },
+    {
+      "_id": "req_create_owner",
+      "parentId": "wrk_owners",
+      "url": "{{ _.base_url }}/api/owner",
+      "name": "Create Owner",
+      "description": "Cria um novo proprietário de API",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Empresa XYZ\",\n  \"descricao\": \"Descrição da empresa\"\n}"
+      },
+      "headers": [
+        {"name": "Content-Type", "value": "application/json"},
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_all_owners",
+      "parentId": "wrk_owners",
+      "url": "{{ _.base_url }}/api/owner",
+      "name": "Get All Owners",
+      "description": "Lista todos os owners",
+      "method": "GET",
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_owner_by_id",
+      "parentId": "wrk_owners",
+      "url": "{{ _.base_url }}/api/owner/1",
+      "name": "Get Owner By ID",
+      "description": "Busca owner por ID",
+      "method": "GET",
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_update_owner",
+      "parentId": "wrk_owners",
+      "url": "{{ _.base_url }}/api/owner/1",
+      "name": "Update Owner",
+      "description": "Atualiza dados do owner",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Empresa XYZ Atualizada\",\n  \"descricao\": \"Nova descrição da empresa\"\n}"
+      },
+      "headers": [
+        {"name": "Content-Type", "value": "application/json"},
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_delete_owner",
+      "parentId": "wrk_owners",
+      "url": "{{ _.base_url }}/api/owner/1",
+      "name": "Delete Owner",
+      "description": "Remove owner do sistema",
+      "method": "DELETE",
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2024-11-20T18:20:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "wrk_integrations",
+      "parentId": null,
+      "name": "TedioApp - Integrations",
+      "description": "Gerenciamento de integrações com sistemas externos",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_integrations",
+      "parentId": "wrk_integrations",
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:8101",
+        "jwt_token": ""
+      },
+      "dataPropertyOrder": {
+        "&": ["base_url", "jwt_token"]
+      },
+      "_type": "environment"
+    },
+    {
+      "_id": "req_create_integration",
+      "parentId": "wrk_integrations",
+      "url": "{{ _.base_url }}/api/integration",
+      "name": "Create Integration",
+      "description": "Cria uma nova integração",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"SYNGOO-API\",\n  \"baseUrl\": \"https://poc.syngoo-talk.app/api/v4\",\n  \"ownerId\": 1,\n  \"headers\": {\n    \"Content-Type\": \"application/json\",\n    \"Accept\": \"application/json\"\n  }\n}"
+      },
+      "headers": [
+        {"name": "Content-Type", "value": "application/json"},
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_integration_minimal",
+      "parentId": "wrk_integrations",
+      "url": "{{ _.base_url }}/api/integration",
+      "name": "Create Integration (Minimal)",
+      "description": "Cria integração sem headers customizados",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"SIMPLE-API\",\n  \"baseUrl\": \"https://api.example.com\",\n  \"ownerId\": 1\n}"
+      },
+      "headers": [
+        {"name": "Content-Type", "value": "application/json"},
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_all_integrations",
+      "parentId": "wrk_integrations",
+      "url": "{{ _.base_url }}/api/integration",
+      "name": "Get All Integrations",
+      "description": "Lista todas as integrações",
+      "method": "GET",
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_integrations_by_owner",
+      "parentId": "wrk_integrations",
+      "url": "{{ _.base_url }}/api/integration?ownerId=1",
+      "name": "Get Integrations By Owner",
+      "description": "Lista integrações de um owner específico",
+      "method": "GET",
+      "parameters": [
+        {"name": "ownerId", "value": "1"}
+      ],
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_integration_by_id",
+      "parentId": "wrk_integrations",
+      "url": "{{ _.base_url }}/api/integration/1",
+      "name": "Get Integration By ID",
+      "description": "Busca integração por ID",
+      "method": "GET",
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_update_integration",
+      "parentId": "wrk_integrations",
+      "url": "{{ _.base_url }}/api/integration/1",
+      "name": "Update Integration",
+      "description": "Atualiza dados da integração",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"SYNGOO-API-V2\",\n  \"baseUrl\": \"https://poc.syngoo-talk.app/api/v5\",\n  \"ownerId\": 1,\n  \"headers\": {\n    \"Content-Type\": \"application/json\",\n    \"Accept\": \"application/json\",\n    \"X-API-Version\": \"v5\"\n  }\n}"
+      },
+      "headers": [
+        {"name": "Content-Type", "value": "application/json"},
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_delete_integration",
+      "parentId": "wrk_integrations",
+      "url": "{{ _.base_url }}/api/integration/1",
+      "name": "Delete Integration",
+      "description": "Remove integração do sistema",
+      "method": "DELETE",
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    }
+  ]
+}

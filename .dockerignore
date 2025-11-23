@@ -1,0 +1,28 @@
+# Git
+.git
+.gitignore
+
+# IDE
+.idea
+.vscode
+*.iml
+
+# Maven
+app/target
+app/.mvn
+
+# Environment
+.env
+app/.env
+
+# Documentation
+*.md
+app/doc
+
+# Logs
+*.log
+logs
+
+# OS
+.DS_Store
+Thumbs.db

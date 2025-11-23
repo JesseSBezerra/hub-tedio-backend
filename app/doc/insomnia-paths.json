@@ -1,0 +1,148 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2024-11-20T18:22:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "wrk_paths",
+      "parentId": null,
+      "name": "TedioApp - Paths",
+      "description": "Gerenciamento de paths/endpoints das integrações",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_paths",
+      "parentId": "wrk_paths",
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:8101",
+        "jwt_token": ""
+      },
+      "dataPropertyOrder": {
+        "&": ["base_url", "jwt_token"]
+      },
+      "_type": "environment"
+    },
+    {
+      "_id": "req_create_path",
+      "parentId": "wrk_paths",
+      "url": "{{ _.base_url }}/api/path",
+      "name": "Create Path",
+      "description": "Cria um novo path para uma integração",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Login\",\n  \"path\": \"/auth/login\",\n  \"integrationId\": 1\n}"
+      },
+      "headers": [
+        {"name": "Content-Type", "value": "application/json"},
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_path_users",
+      "parentId": "wrk_paths",
+      "url": "{{ _.base_url }}/api/path",
+      "name": "Create Path - Users",
+      "description": "Exemplo de path para listagem de usuários",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"List Users\",\n  \"path\": \"/users\",\n  \"integrationId\": 1\n}"
+      },
+      "headers": [
+        {"name": "Content-Type", "value": "application/json"},
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_path_user_by_id",
+      "parentId": "wrk_paths",
+      "url": "{{ _.base_url }}/api/path",
+      "name": "Create Path - User By ID",
+      "description": "Exemplo de path com parâmetro",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Get User By ID\",\n  \"path\": \"/users/{id}\",\n  \"integrationId\": 1\n}"
+      },
+      "headers": [
+        {"name": "Content-Type", "value": "application/json"},
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_all_paths",
+      "parentId": "wrk_paths",
+      "url": "{{ _.base_url }}/api/path",
+      "name": "Get All Paths",
+      "description": "Lista todos os paths",
+      "method": "GET",
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_paths_by_integration",
+      "parentId": "wrk_paths",
+      "url": "{{ _.base_url }}/api/path?integrationId=1",
+      "name": "Get Paths By Integration",
+      "description": "Lista paths de uma integração específica",
+      "method": "GET",
+      "parameters": [
+        {"name": "integrationId", "value": "1"}
+      ],
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_path_by_id",
+      "parentId": "wrk_paths",
+      "url": "{{ _.base_url }}/api/path/1",
+      "name": "Get Path By ID",
+      "description": "Busca path por ID",
+      "method": "GET",
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_update_path",
+      "parentId": "wrk_paths",
+      "url": "{{ _.base_url }}/api/path/1",
+      "name": "Update Path",
+      "description": "Atualiza dados do path",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Login V2\",\n  \"path\": \"/api/v2/auth/login\",\n  \"integrationId\": 1\n}"
+      },
+      "headers": [
+        {"name": "Content-Type", "value": "application/json"},
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_delete_path",
+      "parentId": "wrk_paths",
+      "url": "{{ _.base_url }}/api/path/1",
+      "name": "Delete Path",
+      "description": "Remove path do sistema",
+      "method": "DELETE",
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    }
+  ]
+}

@@ -1,0 +1,119 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2024-11-20T16:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "wrk_actuator",
+      "parentId": null,
+      "name": "TedioApp - Actuator",
+      "description": "Endpoints de monitoramento e métricas",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_actuator",
+      "parentId": "wrk_actuator",
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:8101",
+        "jwt_token": ""
+      },
+      "dataPropertyOrder": {
+        "&": ["base_url", "jwt_token"]
+      },
+      "_type": "environment"
+    },
+    {
+      "_id": "req_health",
+      "parentId": "wrk_actuator",
+      "url": "{{ _.base_url }}/actuator/health",
+      "name": "Health Check",
+      "description": "Status de saúde da aplicação (público)",
+      "method": "GET",
+      "_type": "request"
+    },
+    {
+      "_id": "req_info",
+      "parentId": "wrk_actuator",
+      "url": "{{ _.base_url }}/actuator/info",
+      "name": "Application Info",
+      "description": "Informações da aplicação (público)",
+      "method": "GET",
+      "_type": "request"
+    },
+    {
+      "_id": "req_metrics",
+      "parentId": "wrk_actuator",
+      "url": "{{ _.base_url }}/actuator/metrics",
+      "name": "Metrics List",
+      "description": "Lista todas as métricas disponíveis",
+      "method": "GET",
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_metrics_jvm",
+      "parentId": "wrk_actuator",
+      "url": "{{ _.base_url }}/actuator/metrics/jvm.memory.used",
+      "name": "JVM Memory Metrics",
+      "description": "Métricas de memória JVM",
+      "method": "GET",
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_metrics_http",
+      "parentId": "wrk_actuator",
+      "url": "{{ _.base_url }}/actuator/metrics/http.server.requests",
+      "name": "HTTP Requests Metrics",
+      "description": "Métricas de requisições HTTP",
+      "method": "GET",
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_flyway",
+      "parentId": "wrk_actuator",
+      "url": "{{ _.base_url }}/actuator/flyway",
+      "name": "Flyway Status",
+      "description": "Status das migrations do Flyway",
+      "method": "GET",
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_env",
+      "parentId": "wrk_actuator",
+      "url": "{{ _.base_url }}/actuator/env",
+      "name": "Environment",
+      "description": "Variáveis de ambiente",
+      "method": "GET",
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_loggers",
+      "parentId": "wrk_actuator",
+      "url": "{{ _.base_url }}/actuator/loggers",
+      "name": "Loggers",
+      "description": "Configuração de loggers",
+      "method": "GET",
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    }
+  ]
+}

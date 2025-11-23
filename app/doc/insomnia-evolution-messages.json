@@ -1,0 +1,332 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2024-11-21T22:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "req_send_text_message",
+      "parentId": "fld_text_messages",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution/message",
+      "name": "Send Text Message",
+      "description": "Envia mensagem de texto simples",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"number\": \"5581996349077\",\n  \"message\": \"teste de envio\",\n  \"evolutionInstanceId\": 1\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596800000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_send_text_long",
+      "parentId": "fld_text_messages",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution/message",
+      "name": "Send Text - Long Message",
+      "description": "Envia mensagem de texto longa",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"number\": \"5581996349077\",\n  \"message\": \"Olá! Esta é uma mensagem de teste mais longa para verificar o envio de textos maiores. O sistema Evolution API suporta mensagens de até 4096 caracteres.\",\n  \"evolutionInstanceId\": 1\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596700000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_send_media_image",
+      "parentId": "fld_media_messages",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution/message/media",
+      "name": "Send Media - Image (PNG)",
+      "description": "Envia imagem PNG",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"number\": \"5581996349077\",\n  \"mediatype\": \"image\",\n  \"mimetype\": \"image/png\",\n  \"media\": \"iVBORw0KGgoAAAANSUhEUgAAA+AAAAQgCAYAAABmaDZHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAB1CQSURBVHja7L15vGVnVef9W+vZ595bc6VSGanMlZFMZIIgQxJJICBGUKZW0GhrO2E7vPraKLZDO7S+2r5Nv6Jgqw0tRCKBgBIIkAABM=\",\n  \"fileName\": \"imagem.png\",\n  \"evolutionInstanceId\": 1\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596600000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_send_media_jpeg",
+      "parentId": "fld_media_messages",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution/message/media",
+      "name": "Send Media - Image (JPEG)",
+      "description": "Envia imagem JPEG",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"number\": \"5581996349077\",\n  \"mediatype\": \"image\",\n  \"mimetype\": \"image/jpeg\",\n  \"media\": \"iVBORw0KGgoAAAANSUhEUgAAA+AAAAQgCAYAAABmaDZHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAB1CQSURBVHja7L15vGVnVef9W+vZ595bc6VSGanMlZFMZIIgQxJJICBGUKZW0GhrO2E7vPraKLZDO7S+2r5Nv6Jgqw0tRCKBgBIIkAABM=\",\n  \"fileName\": \"foto.jpg\",\n  \"evolutionInstanceId\": 1\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596500000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_send_media_pdf",
+      "parentId": "fld_media_messages",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution/message/media",
+      "name": "Send Media - Document (PDF)",
+      "description": "Envia documento PDF",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"number\": \"5581996349077\",\n  \"mediatype\": \"document\",\n  \"mimetype\": \"application/pdf\",\n  \"media\": \"JVBERi0xLjQKJeLjz9MKNCAwIG9iago8PC9GaWx0ZXIvRmxhdGVEZWNvZGUvTGVuZ3RoIDQ5Pj5zdHJlYW0KeJwr5HIK4TI2U\",\n  \"fileName\": \"documento.pdf\",\n  \"evolutionInstanceId\": 1\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596400000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_send_audio",
+      "parentId": "fld_audio_messages",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution/message/audio",
+      "name": "Send Audio Message",
+      "description": "Envia mensagem de áudio/voz",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"number\": \"5581996349077\",\n  \"audio\": \"SUQzAwAAAAAAbVRYWFgAAAAgAAAARW5jb2RlZCBieQBMQU1FIGluIEZMIFN0dWRpbyAyMFRYWFgAAAAbAAAAQlBNIChiZWF0cyBwZXIgbWludXRlKQAxMjBUWUVSAAAABQAAADIwMThURFJDAAAABQAAADIwMTj/+5BkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABYaW5nAAAADwAABkoACzFWAAMFBwkKDA4QEhMWGBobHR8hIyQnKSwuMTM2OTs9QENFR0pNT1JUV1lcXmBjZWdqbG5xc3V4en1/gYWJjI+RlJeanaCkp6qtsLO2ubu/w8XIy87Q09XY3N/i5efq7e/y9fn8/gAAAFBMQU1FMy4xMDAEuQAAAAAAAAAANSAkBihNAAHgAAsxVqV2f2gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=\",\n  \"evolutionInstanceId\": 1\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596300000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_send_sticker",
+      "parentId": "fld_sticker_messages",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "url": "{{ _.base_url }}/api/evolution/message/sticker",
+      "name": "Send Sticker",
+      "description": "Envia figurinha/sticker",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"number\": \"5581996349077\",\n  \"sticker\": \"iVBORw0KGgoAAAANSUhEUgAAA+AAAAQgCAYAAABmaDZHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAB1CQSURBVHja7L15vGVnVef9W+vZ595bc6VSGanMlZFMZIIgQxJJICBGUKZW0GhrO2E7vPraKLZDO7S+2r5Nv6Jgqw0tRCKBgBIIkAABM=\",\n  \"evolutionInstanceId\": 1\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700596200000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_text_messages",
+      "parentId": "wrk_tedioapp_messages",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "name": "📝 Text Messages",
+      "description": "Mensagens de texto",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1700596800000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_media_messages",
+      "parentId": "wrk_tedioapp_messages",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "name": "📷 Media Messages",
+      "description": "Mensagens de mídia (imagem, vídeo, documento)",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1700596700000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_audio_messages",
+      "parentId": "wrk_tedioapp_messages",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "name": "🎵 Audio Messages",
+      "description": "Mensagens de áudio/voz",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1700596600000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "fld_sticker_messages",
+      "parentId": "wrk_tedioapp_messages",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "name": "🎨 Sticker Messages",
+      "description": "Mensagens de figurinha/sticker",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1700596500000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_tedioapp_messages",
+      "parentId": null,
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "name": "TedioApp - Evolution Messages",
+      "description": "Collection completa para envio de mensagens Evolution",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_tedioapp_messages",
+      "parentId": "wrk_tedioapp_messages",
+      "modified": 1700596800000,
+      "created": 1700596800000,
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:8101",
+        "jwt_token": ""
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "base_url",
+          "jwt_token"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1700596800000,
+      "_type": "environment"
+    }
+  ]
+}

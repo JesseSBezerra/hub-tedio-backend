@@ -1,0 +1,165 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2024-11-20T18:28:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "wrk_requests",
+      "parentId": null,
+      "name": "TedioApp - Requests",
+      "description": "Gerenciamento de requisições dos paths",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_requests",
+      "parentId": "wrk_requests",
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:8101",
+        "jwt_token": ""
+      },
+      "dataPropertyOrder": {
+        "&": ["base_url", "jwt_token"]
+      },
+      "_type": "environment"
+    },
+    {
+      "_id": "req_create_request_post",
+      "parentId": "wrk_requests",
+      "url": "{{ _.base_url }}/api/request",
+      "name": "Create Request - POST Login",
+      "description": "Exemplo de request POST com body",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Login Request\",\n  \"httpMethod\": \"POST\",\n  \"pathId\": 1,\n  \"contentType\": \"APPLICATION_JSON\",\n  \"bodyFields\": {\n    \"email\": \"string\",\n    \"password\": \"string\"\n  },\n  \"headerFields\": {\n    \"Content-Type\": \"string\",\n    \"Accept\": \"string\"\n  },\n  \"paramFields\": {},\n  \"requestExample\": {\n    \"email\": \"user@example.com\",\n    \"password\": \"senha123\"\n  }\n}"
+      },
+      "headers": [
+        {"name": "Content-Type", "value": "application/json"},
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_request_get",
+      "parentId": "wrk_requests",
+      "url": "{{ _.base_url }}/api/request",
+      "name": "Create Request - GET Users",
+      "description": "Exemplo de request GET com params",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"List Users Request\",\n  \"httpMethod\": \"GET\",\n  \"pathId\": 2,\n  \"contentType\": null,\n  \"bodyFields\": {},\n  \"headerFields\": {\n    \"Authorization\": \"string\"\n  },\n  \"paramFields\": {\n    \"page\": \"integer\",\n    \"limit\": \"integer\",\n    \"search\": \"string\"\n  },\n  \"requestExample\": {\n    \"params\": {\n      \"page\": 1,\n      \"limit\": 10,\n      \"search\": \"john\"\n    }\n  }\n}"
+      },
+      "headers": [
+        {"name": "Content-Type", "value": "application/json"},
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_request_complex",
+      "parentId": "wrk_requests",
+      "url": "{{ _.base_url }}/api/request",
+      "name": "Create Request - Complex Body",
+      "description": "Exemplo com body complexo (arrays e objetos aninhados)",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Create User Request\",\n  \"httpMethod\": \"POST\",\n  \"pathId\": 2,\n  \"contentType\": \"APPLICATION_JSON\",\n  \"bodyFields\": {\n    \"name\": \"string\",\n    \"email\": \"string\",\n    \"address.street\": \"string\",\n    \"address.city\": \"string\",\n    \"phones[]\": \"string\",\n    \"roles[].name\": \"string\",\n    \"roles[].permissions[]\": \"string\"\n  },\n  \"headerFields\": {\n    \"Content-Type\": \"string\",\n    \"Authorization\": \"string\"\n  },\n  \"paramFields\": {},\n  \"requestExample\": {\n    \"name\": \"João Silva\",\n    \"email\": \"joao@example.com\",\n    \"address\": {\n      \"street\": \"Rua A\",\n      \"city\": \"São Paulo\"\n    },\n    \"phones\": [\"+5511999999999\", \"+5511888888888\"],\n    \"roles\": [\n      {\n        \"name\": \"admin\",\n        \"permissions\": [\"read\", \"write\", \"delete\"]\n      },\n      {\n        \"name\": \"user\",\n        \"permissions\": [\"read\"]\n      }\n    ]\n  }\n}"
+      },
+      "headers": [
+        {"name": "Content-Type", "value": "application/json"},
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_request_form",
+      "parentId": "wrk_requests",
+      "url": "{{ _.base_url }}/api/request",
+      "name": "Create Request - Form Data",
+      "description": "Exemplo com form-urlencoded",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Login Form Request\",\n  \"httpMethod\": \"POST\",\n  \"pathId\": 1,\n  \"contentType\": \"APPLICATION_FORM_URLENCODED\",\n  \"bodyFields\": {\n    \"username\": \"string\",\n    \"password\": \"string\",\n    \"remember_me\": \"boolean\"\n  },\n  \"headerFields\": {\n    \"Content-Type\": \"string\"\n  },\n  \"paramFields\": {},\n  \"requestExample\": {\n    \"username\": \"admin\",\n    \"password\": \"senha123\",\n    \"remember_me\": true\n  }\n}"
+      },
+      "headers": [
+        {"name": "Content-Type", "value": "application/json"},
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_all_requests",
+      "parentId": "wrk_requests",
+      "url": "{{ _.base_url }}/api/request",
+      "name": "Get All Requests",
+      "description": "Lista todas as requests",
+      "method": "GET",
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_requests_by_path",
+      "parentId": "wrk_requests",
+      "url": "{{ _.base_url }}/api/request?pathId=1",
+      "name": "Get Requests By Path",
+      "description": "Lista requests de um path específico",
+      "method": "GET",
+      "parameters": [
+        {"name": "pathId", "value": "1"}
+      ],
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_request_by_id",
+      "parentId": "wrk_requests",
+      "url": "{{ _.base_url }}/api/request/1",
+      "name": "Get Request By ID",
+      "description": "Busca request por ID",
+      "method": "GET",
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_update_request",
+      "parentId": "wrk_requests",
+      "url": "{{ _.base_url }}/api/request/1",
+      "name": "Update Request",
+      "description": "Atualiza dados da request",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"nome\": \"Login Request V2\",\n  \"httpMethod\": \"POST\",\n  \"pathId\": 1,\n  \"contentType\": \"APPLICATION_JSON\",\n  \"bodyFields\": {\n    \"email\": \"string\",\n    \"password\": \"string\",\n    \"device_id\": \"string\"\n  },\n  \"headerFields\": {\n    \"Content-Type\": \"string\",\n    \"Accept\": \"string\",\n    \"User-Agent\": \"string\"\n  },\n  \"paramFields\": {},\n  \"requestExample\": {\n    \"email\": \"user@example.com\",\n    \"password\": \"senha123\",\n    \"device_id\": \"abc-123-def\"\n  }\n}"
+      },
+      "headers": [
+        {"name": "Content-Type", "value": "application/json"},
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    },
+    {
+      "_id": "req_delete_request",
+      "parentId": "wrk_requests",
+      "url": "{{ _.base_url }}/api/request/1",
+      "name": "Delete Request",
+      "description": "Remove request do sistema",
+      "method": "DELETE",
+      "headers": [
+        {"name": "Authorization", "value": "Bearer {{ _.jwt_token }}"}
+      ],
+      "_type": "request"
+    }
+  ]
+}
