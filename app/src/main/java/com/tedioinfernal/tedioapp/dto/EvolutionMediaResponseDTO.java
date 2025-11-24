@@ -1,0 +1,19 @@
+package com.tedioinfernal.tedioapp.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class EvolutionMediaResponseDTO {
+    
+    private String mediaType;
+    private String fileName;
+    private String fileLength;
+    private String mimetype;
+    private String base64;
+}

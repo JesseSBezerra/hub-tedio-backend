@@ -129,19 +129,44 @@ As coleções foram organizadas por módulo/serviço para facilitar o gerenciame
 ### 8. **insomnia-evolution-messages.json** 💬
 **Envio de Mensagens Evolution**
 
-- Send Message
-- Send Message - Example 2
-- Send Message - Long Text
+- Send Text Message
+- Send Text - Long Message
+- Send Media - Image (PNG)
+- Send Media - Image (JPEG)
+- Send Media - Document (PDF)
+- Send Audio Message
+- Send Sticker
 
 **Funcionalidades:**
 - Envio de mensagens de texto via Evolution API
+- Envio de mensagens de mídia (imagem, vídeo, documento)
+- Envio de mensagens de áudio/voz
+- Envio de stickers/figurinhas
 - Integração automática com EvolutionInstance
 - Response simplificado com status do envio
 - Suporte a mensagens longas (até 4096 caracteres)
 
 ---
 
-### 9. **insomnia-actuator.json** 📊
+### 9. **insomnia-evolution-media.json** 📥
+**Buscar Base64 de Mensagens de Mídia**
+
+- Get Media Base64 - Audio Message
+- Get Media Base64 - Video Message
+- Get Media Base64 - Image Message
+- Get Media Base64 - Document Message
+- Get Media Base64 - Sticker Message
+
+**Funcionalidades:**
+- Buscar base64 de mensagens de mídia recebidas
+- Suporte a áudio, vídeo, imagem, documento e sticker
+- Conversão opcional para MP4 (vídeos)
+- Retorna mediaType, fileName, mimetype, fileLength e base64
+- Integração automática com EvolutionInstance
+
+---
+
+### 10. **insomnia-actuator.json** 📊
 **Monitoramento e Métricas**
 
 - Health Check (público)

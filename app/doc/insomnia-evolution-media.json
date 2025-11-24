@@ -1,0 +1,226 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2024-11-24T15:12:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "req_get_media_base64_audio",
+      "parentId": "fld_media_retrieval",
+      "modified": 1700850000000,
+      "created": 1700850000000,
+      "url": "{{ _.base_url }}/api/evolution/media",
+      "name": "Get Media Base64 - Audio Message",
+      "description": "Busca base64 de mensagem de áudio",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"messageId\": \"3EB0E2EA44FC79EE913EFB\",\n  \"evolutionInstanceId\": 1,\n  \"convertToMp4\": false\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700850000000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_media_base64_video",
+      "parentId": "fld_media_retrieval",
+      "modified": 1700850000000,
+      "created": 1700850000000,
+      "url": "{{ _.base_url }}/api/evolution/media",
+      "name": "Get Media Base64 - Video Message",
+      "description": "Busca base64 de mensagem de vídeo",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"messageId\": \"3EB091A3574CBF8AE35591A3C30082AB7B2F4886\",\n  \"evolutionInstanceId\": 1,\n  \"convertToMp4\": true\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700849900000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_media_base64_image",
+      "parentId": "fld_media_retrieval",
+      "modified": 1700850000000,
+      "created": 1700850000000,
+      "url": "{{ _.base_url }}/api/evolution/media",
+      "name": "Get Media Base64 - Image Message",
+      "description": "Busca base64 de mensagem de imagem",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"messageId\": \"3EB0A1B2C3D4E5F6G7H8I9J0\",\n  \"evolutionInstanceId\": 1,\n  \"convertToMp4\": false\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700849800000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_media_base64_document",
+      "parentId": "fld_media_retrieval",
+      "modified": 1700850000000,
+      "created": 1700850000000,
+      "url": "{{ _.base_url }}/api/evolution/media",
+      "name": "Get Media Base64 - Document Message",
+      "description": "Busca base64 de mensagem de documento",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"messageId\": \"3EB0F1E2D3C4B5A6978869504132\",\n  \"evolutionInstanceId\": 1,\n  \"convertToMp4\": false\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700849700000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_media_base64_sticker",
+      "parentId": "fld_media_retrieval",
+      "modified": 1700850000000,
+      "created": 1700850000000,
+      "url": "{{ _.base_url }}/api/evolution/media",
+      "name": "Get Media Base64 - Sticker Message",
+      "description": "Busca base64 de mensagem de sticker",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n  \"messageId\": \"3EB0C1D2E3F4A5B6978859403122\",\n  \"evolutionInstanceId\": 1,\n  \"convertToMp4\": false\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        },
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ _.jwt_token }}"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1700849600000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "fld_media_retrieval",
+      "parentId": "wrk_tedioapp_media",
+      "modified": 1700850000000,
+      "created": 1700850000000,
+      "name": "📥 Media Retrieval",
+      "description": "Buscar base64 de mensagens de mídia",
+      "environment": {},
+      "environmentPropertyOrder": null,
+      "metaSortKey": -1700850000000,
+      "_type": "request_group"
+    },
+    {
+      "_id": "wrk_tedioapp_media",
+      "parentId": null,
+      "modified": 1700850000000,
+      "created": 1700850000000,
+      "name": "TedioApp - Evolution Media",
+      "description": "Collection para buscar base64 de mensagens de mídia Evolution",
+      "scope": "collection",
+      "_type": "workspace"
+    },
+    {
+      "_id": "env_tedioapp_media",
+      "parentId": "wrk_tedioapp_media",
+      "modified": 1700850000000,
+      "created": 1700850000000,
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:8101",
+        "jwt_token": ""
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "base_url",
+          "jwt_token"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1700850000000,
+      "_type": "environment"
+    }
+  ]
+}
