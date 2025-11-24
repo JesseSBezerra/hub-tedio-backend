@@ -18,7 +18,7 @@ Spring Boot application with JWT authentication and Evolution API integration.
 # Copy the example file
 cp app/.env.example app/.env
 
-# Edit app/.env with your credentials
+# Edit app/.env with your credentials e app
 ```
 
 2. **Build and run:**
